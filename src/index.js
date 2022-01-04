@@ -41,7 +41,8 @@ getDataChallenge2()
 
 function rednerBreeds(breeds) {
     const breedNameContainer = document.getElementById('dog-breeds')
-    const li = document.createElement('li')
-    li.src = breeds
+    let li = document.createElement('li')
+    li.textContent = breeds
     breedNameContainer.appendChild(li)
+    
 }
