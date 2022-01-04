@@ -25,6 +25,7 @@ function renderImage(picURL) {
 }
 
 //Challenge #2
+//This function fetches the breed names from the API and iterates over them with a forEach loop
 function getDataChallenge2() {
 fetch('https://dog.ceo/api/breeds/list/all')
 .then(response => response.json())
@@ -32,11 +33,11 @@ fetch('https://dog.ceo/api/breeds/list/all')
     const dogData = data
     const dogDataObject = Object.entries(dogData.message)
     dogDataObject.forEach(breeds => renderBreeds(breeds))
-    
 })
 }
 getDataChallenge2()
 
+//This function renders the breed names to the DOM
 function renderBreeds(breeds) {
     const breedNameContainer = document.getElementById('dog-breeds')
     let li = document.createElement('li')
