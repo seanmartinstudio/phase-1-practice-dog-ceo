@@ -1,6 +1,4 @@
 console.log('%c HI', 'color: firebrick')
-// const dogImgContainer = document.getElementById("dog-image-container")
-// console.log(dogImgContainer)
 
 //Challenge #1
 //This function fetches the images from the URL, converts JSON data to a variable and iterates...
@@ -33,16 +31,15 @@ fetch('https://dog.ceo/api/breeds/list/all')
 .then(data => {
     const dogData = data
     const dogDataObject = Object.entries(dogData.message)
-    dogDataObject.forEach(breeds => rednerBreeds(breeds))
+    dogDataObject.forEach(breeds => renderBreeds(breeds))
     
 })
 }
 getDataChallenge2()
 
-function rednerBreeds(breeds) {
+function renderBreeds(breeds) {
     const breedNameContainer = document.getElementById('dog-breeds')
     let li = document.createElement('li')
     li.textContent = breeds
-    breedNameContainer.appendChild(li)
-    
+    breedNameContainer.appendChild(li)   
 }
