@@ -43,10 +43,11 @@ function renderBreeds(breeds) {
     let li = document.createElement('li')
     li.textContent = breeds
     breedNameContainer.appendChild(li)  
+    console.log(li)
 }
 
 // //Challenge #3
-// function eventListener()
-// document.addEventListener('click', (event) => {
-//     console.log("hello")
-// })
+function eventListener()
+document.addEventListener('click', (event) => {
+    
+})
