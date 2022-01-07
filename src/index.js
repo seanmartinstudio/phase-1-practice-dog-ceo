@@ -42,5 +42,11 @@ function renderBreeds(breeds) {
     const breedNameContainer = document.getElementById('dog-breeds')
     let li = document.createElement('li')
     li.textContent = breeds
-    breedNameContainer.appendChild(li)   
+    breedNameContainer.appendChild(li)  
 }
+
+// //Challenge #3
+// function eventListener()
+// document.addEventListener('click', (event) => {
+//     console.log("hello")
+// })
