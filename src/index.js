@@ -48,11 +48,7 @@ function renderBreeds(breeds) {
             li.style.color = 'blue'
         }
     })  
-    console.log(li)
+    let select = document.getElementById('breed-dropdown')
+    console.log(select)
 }
 
-// //Challenge #4
-function dropDown(li) {
-    let select = document.getElementById('breed-dropdown')
-}
-dropDown()
