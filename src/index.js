@@ -42,12 +42,17 @@ function renderBreeds(breeds) {
     const breedNameContainer = document.getElementById('dog-breeds')
     let li = document.createElement('li')
     li.textContent = breeds
-    breedNameContainer.appendChild(li)  
+    breedNameContainer.appendChild(li)
+    li.addEventListener('click', () => {
+        if(li.style.color === "") {
+            li.style.color = 'blue'
+        }
+    })  
     console.log(li)
 }
 
-// //Challenge #3
-function eventListener()
-document.addEventListener('click', (event) => {
-    
-})
+// //Challenge #4
+function dropDown(li) {
+    let select = document.getElementById('breed-dropdown')
+}
+dropDown()
