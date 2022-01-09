@@ -32,7 +32,7 @@ fetch('https://dog.ceo/api/breeds/list/all')
 .then(data => {
     const dogData = data
     const dogDataObject = Object.entries(dogData.message)
-    dogDataObject.forEach(breeds => renderBreeds(breeds))
+    dogDataObject.forEach(breeds => renderBreeds(breeds[0]))
 })
 }
 getDataChallenge2()
@@ -41,7 +41,8 @@ getDataChallenge2()
 function renderBreeds(breeds) {
     const breedNameContainer = document.getElementById('dog-breeds')
     let li = document.createElement('li')
-    li.textContent = breeds[0]
+    li.textContent = breeds //[0]
+    //add call back here
     breedNameContainer.appendChild(li)
     li.addEventListener('click', () => {
         if(li.style.color === "") {
@@ -50,11 +51,25 @@ function renderBreeds(breeds) {
     })    
 }
 //This function should setup the dropdown menu
-function dropDownMenu() {
+function filterByLetter() {
     let select = document.getElementById('breed-dropdown')
-    console.log(select)
+    select.addEventListener('change', (event) => {
+        fetch('https://dog.ceo/api/breeds/list/all')
+        .then(response => response.json())
+        .then(data => {
+        const dogData = data
+        const dogDataObject = Object.keys(dogData.message)
+        const firstLetter = dogDataObject.filter(element => {
+            element.startsWith(event.target.value)
+        })
+        console.log(dogDataObject)
+        console.log(firstLetter)
+        console.log(event.target.value)
+           
+        firstLetter.forEach(breed => renderBreeds(breed)) 
+    
+    })
+    })
 }
-dropDownMenu()
-
-        
+filterByLetter()
 
