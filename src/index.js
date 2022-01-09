@@ -37,18 +37,24 @@ fetch('https://dog.ceo/api/breeds/list/all')
 }
 getDataChallenge2()
 
-//This function renders the breed names to the DOM
+//This function renders the breed names to the DOM and changed text color when clicked
 function renderBreeds(breeds) {
     const breedNameContainer = document.getElementById('dog-breeds')
     let li = document.createElement('li')
-    li.textContent = breeds
+    li.textContent = breeds[0]
     breedNameContainer.appendChild(li)
     li.addEventListener('click', () => {
         if(li.style.color === "") {
             li.style.color = 'blue'
         }
-    })  
+    })    
+}
+//This function should setup the dropdown menu
+function dropDownMenu() {
     let select = document.getElementById('breed-dropdown')
     console.log(select)
 }
+dropDownMenu()
+
+        
 
