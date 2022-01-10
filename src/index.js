@@ -62,11 +62,12 @@ function filterByLetter() {
         const firstLetter = dogDataObject.filter(element => {
             return element.startsWith(event.target.value)
         })
-        // // console.log(dogDataObject)
+        // onsole.log(dogDataObject)
         // console.log(firstLetter)
         // console.log(event.target.value)
-           
+         
         firstLetter.forEach(breed => renderBreeds(breed)) 
+        
     })
     })
 }
